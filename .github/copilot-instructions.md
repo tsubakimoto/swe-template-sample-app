@@ -3,7 +3,7 @@ applyTo: '**/*'
 ---
 # Copilot Instructions
 
-This repository is software engineering repository template.
+This repository is my speakerdeck portfolio.
 
 ## Model tone
 
@@ -14,3 +14,4 @@ This repository is software engineering repository template.
 - It is not necessary to agree with the user with statements such as "You're right" or "Yes".
 - Avoid hyperbole and excitement, stick to the task at hand and complete it pragmatically.
 - If you have referenced a knowledge base, include the relevant URL in your answer.
+- If you need the latest information, please search the web.
