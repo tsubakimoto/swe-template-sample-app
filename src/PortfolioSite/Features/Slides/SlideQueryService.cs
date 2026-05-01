@@ -8,7 +8,6 @@ public sealed class SlideQueryService(ISlideRepository repository) : ISlideQuery
     {
         var slides = await repository.GetAllAsync(cancellationToken);
         return slides
-            .OrderByDescending(x => x.PublishedOn)
             .Take(count)
             .ToArray();
     }

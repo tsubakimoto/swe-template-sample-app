@@ -6,6 +6,7 @@ namespace PortfolioSite.Features.Slides;
 public sealed class JsonSlideRepository(IOptions<SlideDataOptions> options) : ISlideRepository
 {
     private readonly SlideDataOptions _options = options.Value;
+    private readonly SemaphoreSlim _cacheLock = new(1, 1);
     private IReadOnlyList<Slide>? _cache;
 
     public async Task<IReadOnlyList<Slide>> GetAllAsync(CancellationToken cancellationToken)
@@ -15,22 +16,35 @@ public sealed class JsonSlideRepository(IOptions<SlideDataOptions> options) : IS
             return _cache;
         }
 
-        if (string.IsNullOrWhiteSpace(_options.JsonPath))
+        await _cacheLock.WaitAsync(cancellationToken);
+        try
         {
-            throw new InvalidOperationException("SlideDataOptions.JsonPath is required.");
+            if (_cache is not null)
+            {
+                return _cache;
+            }
+
+            if (string.IsNullOrWhiteSpace(_options.JsonPath))
+            {
+                throw new InvalidOperationException("SlideDataOptions.JsonPath is required.");
+            }
+
+            await using var stream = File.OpenRead(_options.JsonPath);
+            var slides = await JsonSerializer.DeserializeAsync<List<Slide>>(stream, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            }, cancellationToken);
+
+            _cache = slides?
+                .OrderByDescending(x => x.PublishedOn)
+                .ToArray()
+                ?? [];
+
+            return _cache;
         }
-
-        await using var stream = File.OpenRead(_options.JsonPath);
-        var slides = await JsonSerializer.DeserializeAsync<List<Slide>>(stream, new JsonSerializerOptions
+        finally
         {
-            PropertyNameCaseInsensitive = true
-        }, cancellationToken);
-
-        _cache = slides?
-            .OrderByDescending(x => x.PublishedOn)
-            .ToArray()
-            ?? [];
-
-        return _cache;
+            _cacheLock.Release();
+        }
     }
 }

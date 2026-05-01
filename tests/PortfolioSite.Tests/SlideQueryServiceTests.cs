@@ -5,12 +5,12 @@ namespace PortfolioSite.Tests;
 public class SlideQueryServiceTests
 {
     [Fact]
-    public async Task GetFeaturedAsync_ReturnsLatestSlides()
+    public async Task GetFeaturedAsync_ReturnsTopSlidesFromRepositoryOrder()
     {
         var repository = new StubSlideRepository([
-            CreateSlide("older-slide", 2024, 1, 1),
             CreateSlide("latest-slide", 2025, 1, 1),
-            CreateSlide("middle-slide", 2024, 6, 1)
+            CreateSlide("middle-slide", 2024, 6, 1),
+            CreateSlide("older-slide", 2024, 1, 1)
         ]);
 
         var service = new SlideQueryService(repository);

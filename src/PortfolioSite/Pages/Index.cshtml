@@ -29,7 +29,10 @@
             {
                 <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
                     <a class="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500" href="/slides/@slide.Id">
-                        <img class="h-44 w-full object-cover" src="@slide.PreviewImageUrl" alt="@slide.Title のサムネイル" loading="lazy" />
+                        @if (!string.IsNullOrWhiteSpace(slide.PreviewImageUrl))
+                        {
+                            <img class="h-44 w-full object-cover" src="@slide.PreviewImageUrl" alt="@slide.Title のサムネイル" loading="lazy" />
+                        }
                         <div class="space-y-2 p-4">
                             <p class="text-xs text-slate-500 dark:text-slate-400">@slide.PublishedOn.ToString("yyyy-MM-dd")</p>
                             <h3 class="line-clamp-2 text-base font-semibold text-slate-900 dark:text-slate-100">@slide.Title</h3>

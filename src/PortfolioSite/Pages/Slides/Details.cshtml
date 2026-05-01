@@ -5,7 +5,10 @@
 }
 
 @section Head {
-    <meta property="og:image" content="@slide.PreviewImageUrl" />
+    @if (!string.IsNullOrWhiteSpace(slide.PreviewImageUrl))
+    {
+        <meta property="og:image" content="@slide.PreviewImageUrl" />
+    }
 }
 
 <article class="space-y-8 py-8 md:py-12">
@@ -18,7 +21,10 @@
 
     <section class="space-y-3" aria-labelledby="slide-preview">
         <h2 id="slide-preview" class="text-xl font-semibold">Preview</h2>
-        <img class="w-full rounded-xl border border-slate-200 dark:border-slate-800" src="@slide.PreviewImageUrl" alt="@slide.Title のプレビュー画像" />
+        @if (!string.IsNullOrWhiteSpace(slide.PreviewImageUrl))
+        {
+            <img class="w-full rounded-xl border border-slate-200 dark:border-slate-800" src="@slide.PreviewImageUrl" alt="@slide.Title のプレビュー画像" />
+        }
     </section>
 
     @if (slide.Tags.Length > 0)
