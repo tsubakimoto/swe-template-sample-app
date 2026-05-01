@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ezientosukiruwozuo-tutezi-fen-noinpututoniyi-li-teyou",
+    "title": "エージェントスキルを作って自分のインプットに役立てよう",
+    "description": "AI Dev Day in Fukuoka\nhttps://azureai.connpass.com/event/382334/",
+    "publishedOn": "2026-04-24",
+    "speakerDeckUrl": "https://speakerdeck.com/tsubakimoto_s/ezientosukiruwozuo-tutezi-fen-noinpututoniyi-li-teyou",
+    "previewImageUrl": "https://files.speakerdeck.com/presentations/d2501f61191c462fbba2ef11a4f98137/preview_slide_0.jpg?39205864",
+    "tags": ["AI", "Agent", "SpeakerDeck"]
+  },
+  {
+    "id": "yasasiitokokarashi-merugithubripozitorinosekiyuritei",
+    "title": "やさしいとこから始めるGitHubリポジトリのセキュリティ",
+    "description": "Azure DevOpsオンライン Vol.14 ～ DevSecOps\nhttps://tfsug.connpass.com/event/385605/",
+    "publishedOn": "2026-03-27",
+    "speakerDeckUrl": "https://speakerdeck.com/tsubakimoto_s/yasasiitokokarashi-merugithubripozitorinosekiyuritei",
+    "previewImageUrl": "https://files.speakerdeck.com/presentations/48cfa31cc235413b8db8351212c080be/preview_slide_0.jpg?38895643",
+    "tags": ["GitHub", "Security", "SpeakerDeck"]
+  },
+  {
+    "id": "github-copilot-cli-de-azure-portal-to-bicep",
+    "title": "GitHub Copilot CLI で Azure Portal to Bicep",
+    "description": "第59回 Tokyo Jazug Night\nhttps://jazug.connpass.com/event/384470/",
+    "publishedOn": "2026-03-23",
+    "speakerDeckUrl": "https://speakerdeck.com/tsubakimoto_s/github-copilot-cli-de-azure-portal-to-bicep",
+    "previewImageUrl": "https://files.speakerdeck.com/presentations/984813079695478488e87aa80ed7f698/preview_slide_0.jpg?38820842",
+    "tags": ["Azure", "Bicep", "GitHub Copilot"]
+  },
+  {
+    "id": "shi-tutexue-bou-mcp-to-github-codespaces",
+    "title": "使って学ぼう MCP (と GitHub Codespaces)",
+    "description": "「【福岡開催】MCP入門＋実践！LINE APIで作るAI連携ハンズオン」での発表資料です\nhttps://linedevelopercommunity.connpass.com/event/381513/",
+    "publishedOn": "2026-02-19",
+    "speakerDeckUrl": "https://speakerdeck.com/tsubakimoto_s/shi-tutexue-bou-mcp-to-github-codespaces",
+    "previewImageUrl": "https://files.speakerdeck.com/presentations/026aed01e5d643a886a2084c4ded7879/preview_slide_0.jpg?38472400",
+    "tags": ["MCP", "GitHub Codespaces"]
+  },
+  {
+    "id": "github-copilot-cli-woshi-iyasukusiyou",
+    "title": "GitHub Copilot CLI を使いやすくしよう",
+    "description": "2026/02/12 クラメソふくおかIT勉強会でのLT資料です\nhttps://classmethod.connpass.com/event/381672/",
+    "publishedOn": "2026-02-12",
+    "speakerDeckUrl": "https://speakerdeck.com/tsubakimoto_s/github-copilot-cli-woshi-iyasukusiyou",
+    "previewImageUrl": "https://files.speakerdeck.com/presentations/d609f95fd4114a30a591ae98dd90c313/preview_slide_0.jpg?38402464",
+    "tags": ["GitHub Copilot CLI"]
+  },
+  {
+    "id": "aspiretogithub-modelsdezuo-ruoshou-qing-aiapuri",
+    "title": "AspireとGitHub Modelsで作るお手軽AIアプリ",
+    "description": "https://fukuten.connpass.com/event/371620/",
+    "publishedOn": "2025-12-21",
+    "speakerDeckUrl": "https://speakerdeck.com/tsubakimoto_s/aspiretogithub-modelsdezuo-ruoshou-qing-aiapuri",
+    "previewImageUrl": "https://files.speakerdeck.com/presentations/261c55949eeb446d9a271082f113433a/preview_slide_0.jpg?37820062",
+    "tags": ["Aspire", "GitHub Models"]
+  }
+]
