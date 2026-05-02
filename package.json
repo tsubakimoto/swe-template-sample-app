@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-site",
+  "private": true,
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/PortfolioSite/Styles/app.css -o ./src/PortfolioSite/wwwroot/css/site.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./src/PortfolioSite/Styles/app.css -o ./src/PortfolioSite/wwwroot/css/site.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}

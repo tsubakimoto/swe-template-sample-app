@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sample-slide",
+    "title": "Sample Slide",
+    "description": "Description",
+    "publishedOn": "2025-01-01",
+    "speakerDeckUrl": "https://speakerdeck.com/tsubakimoto_s/sample-slide",
+    "previewImageUrl": "https://example.com/sample.jpg",
+    "tags": ["sample"]
+  },
+  {
+    "id": "sample-slide-2",
+    "title": "Sample Slide 2",
+    "description": "Description 2",
+    "publishedOn": "2024-01-01",
+    "speakerDeckUrl": "https://speakerdeck.com/tsubakimoto_s/sample-slide-2",
+    "previewImageUrl": "https://example.com/sample2.jpg",
+    "tags": ["sample"]
+  }
+]

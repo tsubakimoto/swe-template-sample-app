@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewData["Description"]" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:description" content="@ViewData["Description"]" />
+    <meta property="og:url" content="@($"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.Path}")" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="@($"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.Path}")" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @await RenderSectionAsync("Head", required: false)
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded focus:bg-slate-900 focus:px-3 focus:py-2 focus:text-white">メインコンテンツへスキップ</a>
+    <header>
+        <nav class="border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
+            <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+                <a class="text-lg font-bold text-slate-900 dark:text-slate-100" asp-page="/Index">tsubakimoto_s</a>
+                <div class="flex items-center gap-6 text-sm font-medium">
+                    <a class="hover:text-sky-600 dark:hover:text-sky-300" asp-page="/Index">Home</a>
+                    <a class="hover:text-sky-600 dark:hover:text-sky-300" href="/slides">Slides</a>
+                    <a class="hover:text-sky-600 dark:hover:text-sky-300" href="https://speakerdeck.com/tsubakimoto_s" target="_blank" rel="noreferrer noopener">SpeakerDeck</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="mx-auto max-w-6xl px-4">
+        <main id="main-content" role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="mt-12 border-t border-slate-200 py-8 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-400">
+        <div class="mx-auto max-w-6xl px-4">
+            © @DateTime.UtcNow.Year Yuta Matsumura
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

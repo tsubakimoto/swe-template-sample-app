@@ -1,0 +1,45 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "tsubakimoto_s | SpeakerDeck Portfolio";
+    ViewData["Description"] = "Yuta Matsumura の SpeakerDeck 公開スライドをまとめたポートフォリオサイト。";
+}
+
+<section class="space-y-8 py-8 md:py-12">
+    <header class="space-y-4">
+        <p class="text-sm text-sky-700 dark:text-sky-300">SpeakerDeck Portfolio</p>
+        <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 md:text-5xl">Yuta Matsumura</h1>
+        <p class="max-w-3xl text-base text-slate-700 dark:text-slate-300 md:text-lg">
+            @ViewData["Description"]
+        </p>
+        <div class="flex flex-wrap gap-3">
+            <a class="rounded-lg bg-sky-600 px-4 py-2 font-semibold text-white hover:bg-sky-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500" href="/slides">スライド一覧を見る</a>
+            <a class="rounded-lg border border-slate-300 px-4 py-2 font-semibold text-slate-900 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800" href="https://speakerdeck.com/tsubakimoto_s" target="_blank" rel="noreferrer noopener">SpeakerDeck プロフィール</a>
+        </div>
+    </header>
+
+    <section aria-labelledby="featured-slides" class="space-y-4">
+        <div class="flex items-baseline justify-between">
+            <h2 id="featured-slides" class="text-2xl font-semibold text-slate-900 dark:text-slate-100">最新スライド</h2>
+            <a class="text-sm font-medium text-sky-700 hover:underline dark:text-sky-300" href="/slides">すべて表示</a>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach (var slide in Model.FeaturedSlides)
+            {
+                <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+                    <a class="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500" href="/slides/@slide.Id">
+                        @if (!string.IsNullOrWhiteSpace(slide.PreviewImageUrl))
+                        {
+                            <img class="h-44 w-full object-cover" src="@slide.PreviewImageUrl" alt="@slide.Title のサムネイル" loading="lazy" />
+                        }
+                        <div class="space-y-2 p-4">
+                            <p class="text-xs text-slate-500 dark:text-slate-400">@slide.PublishedOn.ToString("yyyy-MM-dd")</p>
+                            <h3 class="line-clamp-2 text-base font-semibold text-slate-900 dark:text-slate-100">@slide.Title</h3>
+                        </div>
+                    </a>
+                </article>
+            }
+        </div>
+    </section>
+</section>
