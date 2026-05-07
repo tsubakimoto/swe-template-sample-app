@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>○✕ゲーム</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>○✕ゲーム</h1>
+      <p id="status" class="status" aria-live="polite"></p>
+      <p id="win-count" class="meta">Win Count: 0</p>
+      <p id="ai-time" class="meta" aria-live="polite">AI 思考時間: -</p>
+      <div id="board" class="board" role="group" aria-label="ゲーム盤面"></div>
+      <button id="restart" class="restart" type="button">もう一度遊ぶ</button>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
