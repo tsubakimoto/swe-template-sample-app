@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1 class="title">Tic Tac Toe</h1>
+
+    <section class="status">
+      <div>現在のプレイヤー: <span id="currentPlayer">X</span></div>
+      <div id="result" class="result" aria-live="polite" aria-atomic="true"></div>
+    </section>
+
+    <section class="board" id="board" role="grid" aria-label="三目並べ">
+      <div class="cell" data-index="0" role="gridcell" tabindex="0" aria-label="セル 1: 空"></div>
+      <div class="cell" data-index="1" role="gridcell" tabindex="0" aria-label="セル 2: 空"></div>
+      <div class="cell" data-index="2" role="gridcell" tabindex="0" aria-label="セル 3: 空"></div>
+      <div class="cell" data-index="3" role="gridcell" tabindex="0" aria-label="セル 4: 空"></div>
+      <div class="cell" data-index="4" role="gridcell" tabindex="0" aria-label="セル 5: 空"></div>
+      <div class="cell" data-index="5" role="gridcell" tabindex="0" aria-label="セル 6: 空"></div>
+      <div class="cell" data-index="6" role="gridcell" tabindex="0" aria-label="セル 7: 空"></div>
+      <div class="cell" data-index="7" role="gridcell" tabindex="0" aria-label="セル 8: 空"></div>
+      <div class="cell" data-index="8" role="gridcell" tabindex="0" aria-label="セル 9: 空"></div>
+    </section>
+
+    <div class="controls">
+      <button id="resetBtn" class="btn">リセット</button>
+    </div>
+
+    <footer class="note">シンプルな 3x3 三目並べ（ローカルのみ）</footer>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

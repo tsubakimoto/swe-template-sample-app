@@ -1,0 +1,108 @@
+:root{
+  --bg:#f7f7fb;
+  --card:#ffffff;
+  --accent:#2b6ef6;
+  --muted:#666;
+  --win:#22c55e;
+  --lose:#ef4444;
+  --cell-border:#e6e6ee;
+}
+
+*{box-sizing:border-box}
+html,body,#board{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Hiragino Kaku Gothic ProN","メイリオ",Arial;
+  background:linear-gradient(180deg,var(--bg),#eef2ff);
+  color:#111827;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.container{
+  width:min(680px,96vw);
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(18,38,63,0.08);
+  display:grid;
+  gap:16px;
+}
+
+.title{
+  margin:0;
+  font-size:1.25rem;
+  text-align:center;
+}
+
+.status{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  font-weight:600;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+.result{
+  font-weight:700;
+  color:var(--muted);
+}
+
+.board{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  padding:8px;
+}
+
+.cell{
+  aspect-ratio:1/1;
+  background:linear-gradient(180deg,#fff,#fbfdff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:clamp(28px,6vw,48px);
+  font-weight:800;
+  border-radius:8px;
+  border:2px solid var(--cell-border);
+  cursor:pointer;
+  user-select:none;
+  transition:transform .08s ease, background .12s ease, box-shadow .08s ease;
+  box-shadow:0 1px 0 rgba(16,24,40,0.03) inset;
+}
+.cell:hover{transform:translateY(-2px)}
+.cell:focus{outline:3px solid rgba(43,110,246,0.15); transform:translateY(-2px)}
+.cell.x{color:var(--accent)}
+.cell.o{color:#d97706}
+
+.cell.win{background:linear-gradient(180deg,#f0fff4,#ecfdf5); border-color:var(--win)}
+
+.controls{display:flex;justify-content:center}
+.btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  font-weight:700;
+  cursor:pointer;
+}
+.btn:hover{filter:brightness(.95)}
+
+.note{font-size:0.85rem;color:var(--muted);text-align:center;padding-top:4px}
+
+@media (max-width:420px){
+  .container{padding:14px}
+  .status{flex-direction:column;align-items:flex-start;gap:6px}
+  .title{font-size:1rem}
+}
+
+.cell[aria-disabled="true"]{
+  opacity:0.5;
+  cursor:not-allowed;
+}
